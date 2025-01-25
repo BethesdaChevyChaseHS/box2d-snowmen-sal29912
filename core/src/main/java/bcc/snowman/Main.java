@@ -145,7 +145,14 @@ public class Main extends ApplicationAdapter {
         ball.createFixture(middleSnowball);
 
         //final snowball
-        //ADD THE CODE HERE
+        ballShape.setRadius(.2f);
+        ballShape.setPosition(new Vector2(0, .55f));
+        FixtureDef topsnowball = new FixtureDef();
+        topsnowball.shape = ballShape;
+        topsnowball.density = 1f;
+        topsnowball.restitution = 0.8f;
+
+        ball.createFixture(topsnowball);
 
         ballShape.dispose();
         ball.setLinearVelocity(new Vector2(randomFloat(-2,2), randomFloat(-2,2)));
